@@ -28,7 +28,8 @@
 旅行前の荷物管理のタイミング、一ヶ月前から予定前日
 
 ## 設計書
-<...>
+ER図　https://drive.google.com/file/d/1NQebxgIMydxkn2IjuEMoR0nMHR_0nSaU/view?usp=sharing
+
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1J56cBILp5uGZONZMd7FiOXllQmtZ4y_PvmHpzbzs_lE/edit?usp=sharing
