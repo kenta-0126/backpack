@@ -30,7 +30,7 @@
 ## 設計書
 ER図　https://drive.google.com/file/d/1NQebxgIMydxkn2IjuEMoR0nMHR_0nSaU/view?usp=sharing
 テーブル定義書　https://docs.google.com/spreadsheets/d/1-7oQHX2SpoET40OCe7HBtDqBCwKX-tOks-eOOncWFSk/edit?usp=sharing
-
+アプリケーション詳細設計　https://docs.google.com/spreadsheets/d/1yfcArx7WE0NXWmuqBKE4sb2Peq7S8S13/edit?usp=sharing&ouid=101165491927973228377&rtpof=true&sd=true
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1J56cBILp5uGZONZMd7FiOXllQmtZ4y_PvmHpzbzs_lE/edit?usp=sharing
