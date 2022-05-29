@@ -1,7 +1,27 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_with model: @user, url: users_registration_path, class 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.first_name_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.last_name_name_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :first_name_kana %><br />
+    <%= f.first_name_kana_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :last_name_kana %><br />
+    <%= f.last_name_kana_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
