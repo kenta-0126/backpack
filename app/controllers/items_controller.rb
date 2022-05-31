@@ -1,23 +1,25 @@
 class ItemsController < ApplicationController
 
   def new
-
+    @item = Item.new
   end
 
   def create
-
+    @item = Item.new(item_params)
+    @item.save
   end
 
   def index
-
-  end
-
-  def show
-
+    @item = Item.all
   end
 
   def edit
+    @item = Item.find(item_params[:id])
+  end
 
+  def update
+    @item = Item.find(item_params[:id])
+    @item.update(item_params)
   end
 
   
