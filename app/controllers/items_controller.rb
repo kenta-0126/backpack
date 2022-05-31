@@ -14,11 +14,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(item_params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(item_params[:id])
+    @item = Item.find(params[:id])
     @item.update(item_params)
   end
 
