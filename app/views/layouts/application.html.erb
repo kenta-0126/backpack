@@ -10,7 +10,28 @@
   </head>
   
   <hedder>
-    <h1>ヘッダー</h1>
+    <nav>
+      <%= link_to "BACKPACK", root_path %>
+      
+      <ul>
+        <% if user_sign_in? %>
+        
+        <li>
+          <%= link_to "MyPage", users_my_page_path %>
+        </li>
+        
+        <li>
+          <%= link_to "持ち物を増やす", new_items_path %>
+        </li>
+        
+        <li>
+          <%= "カバンを増やす", new_genres_path %>
+        </li>
+        
+        <li>
+        </li>
+      </ul>
+    </nav>
   </hedder>
 
   <body>
