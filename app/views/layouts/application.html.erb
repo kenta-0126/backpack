@@ -14,7 +14,7 @@
       <%= link_to "BACKPACK", root_path %>
       
       <ul>
-        <% if user_sign_in? %>
+        <% if user_signed_in? %>
         
         <li>
           <%= link_to "MyPage", users_my_page_path %>
@@ -37,7 +37,7 @@
         <li>
           <%= link_to "About", about_path %>
         </li>
-        <% end %
+        <% end %>
       </ul>
     </nav>
   </hedder>
