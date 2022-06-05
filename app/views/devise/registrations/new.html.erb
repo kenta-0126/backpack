@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_with model: @user, url: users_registration_path, class 'new_user', local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
   <div class="field">
@@ -10,7 +10,7 @@
   
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.last_name_name_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    <%= f.last_name_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
   
   <div class="field">
