@@ -7,19 +7,19 @@ Rails.application.routes.draw do
   resources :events, onry: [:index, :new, :create]
 
   resources :genres, onry: [:new, :create, :index, :edit, :update]
-  
-  resources :item, onry: [:new, :create, :edit, :update]
-  
+
+  resources :items, onry: [:new, :create, :edit, :update]
+
   get 'users/my_page' => 'user#show'
   get 'users/confirm' => 'user#confirm'
   resources :users, onry: [:edit, :update] do
-    
+
     collection do
       patch 'withdraw'
     end
-  
+
   end
-    
-  
-  
+
+
+
 end
