@@ -1,1 +1,25 @@
 <h1>アイテム追加ページ</h1>
+  <div>
+    <% form_with model: @genre, url: new_genre_path %>
+    <%= f.text_field :genres, placeholder: "カバンを追加" %>
+    <%= f.submit "登録" %>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>持ってるかばん</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= genre.name %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <% @genres.each %>
+    
+  </div>
+  
