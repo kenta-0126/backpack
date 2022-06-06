@@ -1,3 +1,5 @@
+<% simple_calendar.each do |simple_calendar| %>
+
 <div class="simple-calendar">
   <div class="calendar-heading">
     <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
@@ -31,3 +33,5 @@
     </tbody>
   </table>
 </div>
+
+<%= paginate simple_calendar %>
