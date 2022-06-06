@@ -2,6 +2,7 @@ class GenresController < ApplicationController
   
   def new
     @genre = Genre.new
+    @genres = Genre.all
   end
   
   def create
@@ -25,6 +26,6 @@ class GenresController < ApplicationController
   private
   
   def genre_params
-    params.require(:genre).permit(:item_id,:name)
+    params.require(:genre).permit(:name)
   end
 end
