@@ -10,7 +10,8 @@ class GenresController < ApplicationController
   end
   
   def index
-    @genre = Gnere.all
+    @genres = Gnere.all
+    @genre = Genre.new
   end
   
   def edit
