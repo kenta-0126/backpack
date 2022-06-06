@@ -11,7 +11,6 @@ class GenresController < ApplicationController
   
   def index
     @genres = Gnere.all
-    @genre = Genre.new
   end
   
   def edit

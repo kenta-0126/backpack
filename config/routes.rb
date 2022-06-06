@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :events, onry: [:index, :new, :create]
 
-  resources :genres, onry: [:new, :create, :index, :edit, :update]
+  resources :genres, onry: [:create, :index, :edit, :update]
 
   resources :items, onry: [:new, :create, :edit, :update]
 
