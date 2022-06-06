@@ -1,3 +1,5 @@
-<%= render 'simple_calendar/calendar', simple_calendar: @simple_calendar %>
-
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
 <h1>マイページ</h1>
+
