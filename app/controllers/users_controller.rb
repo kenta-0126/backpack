@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def withdraw
     @user = User.find(current_user.id)
     @user.update(is_active: 1) #1で退会済みの論理削除
-    reset.session
+    reset_session
     redirect_to root_path
   end
 
