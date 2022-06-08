@@ -16,4 +16,12 @@
  *= require_self
  */
 
- 
+
+.logo {
+  width: 210px;
+  margin-top: 14px;
+}
+
+.main-nav {
+  display: flex;
+}
