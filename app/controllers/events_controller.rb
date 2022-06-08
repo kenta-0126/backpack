@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   
   def new
     @event = Event.new
+    @evenrs = Event.all
   end
   
   def create

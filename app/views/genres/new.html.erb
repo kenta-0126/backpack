@@ -1,6 +1,6 @@
 <h1>ジャンル追加ページ</h1>
 <div>
-    <% form_with model: @genre, url: new_genre_path, local: true do |f| %>
+    <%= form_with model: @genre, url: new_genre_path, local: true do |f| %>
     <%= f.text_field :name, placeholder: "カバンを追加" %>
     <%= f.submit "登録" %>
     <% end %>
