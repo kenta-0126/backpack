@@ -9,14 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <hedder>
+  <hedder class="page-hedder wrapper">
      <%= image_tag 'logo.jpg', class: 'logo' %>
     <nav>
-      <ul>
+      <ul class="main-nav">
         <% if user_signed_in? %>
 
         <li>
-          <%= link_to "MyPage", users_my_page_path %>
+          <%= link_to "MyPage", users_my_page_path, class: "" %>
         </li>
 
         <li>
