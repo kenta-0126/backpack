@@ -1,8 +1,9 @@
 <div>
-  <%= month_calendar(events: @events) do |date, events| %>
+  <%= month_calendarevents: @events) do |date, events| %>
     <%= date.day %>
   <% end %>
 </div>
+
 
 <div>
   <%= link_to "予定を追加する", new_event_path %>
@@ -15,6 +16,4 @@
 <div>
   <%= link_to "退会する", users_confirm_path(@user) %>
 </div>
-
-
 
