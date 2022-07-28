@@ -1,26 +1,16 @@
- <div class="top-content">
+<div class="top">
 
 
-  <div>
-    <h1 class="title">BACKPACK</h1>
-  </div>
-  
-<% if user_signed_in? %>
-  <div>
-    <%= month_calendarevents: @events) do |date, events| %>
-    <%= date.day %>
-  　<% end %>
-  </div>
-  
-<% else %>
+   <div class="top-content">
 
-  <div class="button">
-    <%= link_to "新規登録", new_user_registration_path %>
-  </div>
+    <h2 class="top-title">BACKPACK</h2>
 
-  <div　class="button">
-    <%= link_to "ログイン", new_user_session_path %>
-  </div>
-<% end %>
+    <div class="top-button">
+      <%= link_to "新規登録", new_user_registration_path, class: "button" %>
 
- </div>
+      <%= link_to "ログイン", new_user_session_path, class: "button" %>
+    </div>
+
+   </div>
+
+</div>

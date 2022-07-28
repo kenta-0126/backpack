@@ -6,9 +6,61 @@
 
 
 
-.top-content {
-  background-image: url("<%= asset_path ('top.jpg') %>") ;
-  backgraund_size: 100vh ;
-  text-align: center;
+.top {
+  background-image: url("<%= asset_path ('top.jpg') %>");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 80vh;
 }
 
+.top-content {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.top-title {
+  font-size: 5rem;
+ 
+}
+
+.top-button {
+  
+}
+
+.button {
+  font-size: 1.375rem;
+  background: #0bd;
+  color: #fff;
+  border-radius: 5px;
+  padding: 18px 32px;
+  margin-left: 40px;
+}
+
+.button:hover {
+  background: #0090aa;
+}
+
+
+
+
+
+
+.about-content {
+  background-image: url("<%= asset_path ('about.jpg') %>");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  text-align: center;
+
+}
+
+.about-text {
+  font-size: 1.125rem;
+  margin: 10px 0 42px;
+}
+
+.about-title {
+  font-size: 5rem;
+}
