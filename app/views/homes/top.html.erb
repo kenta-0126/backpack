@@ -4,6 +4,15 @@
   <div>
     <h1 class="title">BACKPACK</h1>
   </div>
+  
+<% if user_signed_in? %>
+  <div>
+    <%= month_calendarevents: @events) do |date, events| %>
+    <%= date.day %>
+  　<% end %>
+  </div>
+  
+<% else %>
 
   <div class="button">
     <%= link_to "新規登録", new_user_registration_path %>
@@ -12,5 +21,6 @@
   <div　class="button">
     <%= link_to "ログイン", new_user_session_path %>
   </div>
+<% end %>
 
  </div>
