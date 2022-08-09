@@ -1,19 +1,29 @@
-<div>
-  <%= month_calendarevents: @events do |date, events| %>
-    <%= date.day %>
-  <% end %>
+<div class="mypage">
+
+  <div class="calender-box">
+
+    <div class="calender">
+      <%= month_calendar events: @user.events do |date, events| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+
+    <div class="event">
+      <%= link_to "予定を追加する", new_event_path %>
+    </div>
+
+  </div>
+
+  <div class="user-content">
+
+    <div>
+      <%= link_to "登録情報の変更", edit_user_path(@user) %>
+    </div>
+
+    <div>
+      <%= link_to "退会する", users_confirm_path(@user) %>
+    </div>
+
+  </div>
+
 </div>
-
-
-<div>
-  <%= link_to "予定を追加する", new_event_path %>
-</div>
-
-<div>
-  <%= link_to "登録情報の変更", edit_user_path(@user) %>
-</div>
-
-<div>
-  <%= link_to "退会する", users_confirm_path(@user) %>
-</div>
-

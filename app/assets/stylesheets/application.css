@@ -11,14 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  *
- *= require simple_calendar
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
 
 
 .logo {
-  
   width: 100px;
   margin-top: 12px;
 }
@@ -53,7 +52,6 @@
 
 
 .login-box {
-  
   text-align: center ;
 }
 
