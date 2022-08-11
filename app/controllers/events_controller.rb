@@ -11,14 +11,17 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(event_params)
-    @event.save
-    redirect_to users_my_page_path(current_user) 
+    if @event.save
+       redirect_to users_my_page_path(current_user) 
+    else 
+       render :new
+    end
   end
   
   private
   
   def event_params
-    params.require(:event).parmit(:title, :start_time, :user_id)
+    params.require(:event).permit(:title, :start_time, :user_id)
   end
   
 end
