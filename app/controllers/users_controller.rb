@@ -4,7 +4,10 @@ class UsersController < ApplicationController
     @user = current_user
     @event = Event.new
     @events = Event.all
-
+    
+    @genres = Genre.all
+    
+    @items = Item.all
   end
 
   def edit

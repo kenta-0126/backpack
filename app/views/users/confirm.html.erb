@@ -1,3 +1,16 @@
-<h1>退会確認ページ</h1>
-<%= link_to "退会しない", users_my_page_path %>
-<%= link_to "退会する", withdraw_users_path(@user), method: :patch, data: { confirm: "[確認]アカウントを削除してもよろしいですか？" } %>
+<div class="confirm">
+  <div class="title">
+    <h1>退会確認ページ</h1>
+  </div>
+  
+  <div class="button-box">
+    <div class="button">
+      <%= link_to "退会しない", users_my_page_path %>
+    </div>
+    
+    <div class="button">
+      <%= link_to "退会する", withdraw_users_path(@user), method: :patch, data: { confirm: "[確認]アカウントを削除してもよろしいですか？" } %>
+    </div>
+  </div>
+    
+</div>
