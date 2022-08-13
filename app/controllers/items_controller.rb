@@ -2,11 +2,14 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @items = Item.all
+    @genres = Genre.all
   end
 
   def create
     @item = Item.new(item_params)
     @item.save
+    redirect_to new_item_path
   end
 
   def index

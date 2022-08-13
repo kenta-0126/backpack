@@ -1,25 +1,55 @@
-<h1>アイテム追加ページ</h1>
+<div class="">
+  
+  <div class="">
+    <h1>アイテム追加ページ</h1>
+  </div>
+  
+  
+  <div class="">
+    <div class="">
+      
+      <%= form_with model: @item, url: items_path, local: true do |f| %>
+        <table>
+          
+          <tr>
+            <th>持ち物</th>
+            <td><%= f.text_field :name, placeholder: "商品名" %></td>
+          </tr>
+          
+          <tr>
+            <th>入れるかばん</th>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+          </tr>
+          
+          <tr>
+            <th></th>
+            <td><%= f.submit "新規登録" %></td>
+          </tr>
+          
+        </table>
+      <% end %>
+      </div>
+      
+      <div>
+        <table>
+          <tbody>
+            
+            <% @genres.each do |genre| %>
+              <tr>
+                <th><%= genre.name %></th>
+                
+                <div>
+                  <% @items.each do |item| %>
+                  <td><%= item.name %></td>
+                  <% end %>
+                </div>
+                
+              </tr>
+            <% end %>
+            
+          </tbody>
+        </table>
+      </div>
+  </div>
 
-<div>
-  <%= form_with model: @item, url: new_item_path, local: true do |f| %>
-  <table>
-
-    <tr>
-      <th>持ち物</th>
-      <td><%= f.text_field :name, placeholder: "商品名" %></td>
-    </tr>
-
-    <tr>
-      <th>入れるかばん</th>
-      <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
-    </tr>
-    
-    <tr>
-      <th></th>
-      <td><%= f.submit "新規登録" %></td>
-    </tr>
-    
-  </table>
-  <% end %>
 </div>
-
