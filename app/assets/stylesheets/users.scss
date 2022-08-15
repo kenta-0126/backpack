@@ -8,7 +8,12 @@
 }
 
 .event {
-  
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
 }
 
 .calender_box {
@@ -19,8 +24,20 @@
   margin-top: 20px ;
 }
 
+.main_box {
+  display: flex ;
+  justify-content: space-between ;
+  margin-bottom: 50px ;
+}
+
+.event_box {
+  width: 74%;
+  display: block ;
+}
+
 .item_box {
-  
+  width: 22% ;
+  diplay: block ;
 }
 
 .user_content {
@@ -28,9 +45,19 @@
 }
 
 .edit {
-  
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
 }
 
 .delete {
-  
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
 }
