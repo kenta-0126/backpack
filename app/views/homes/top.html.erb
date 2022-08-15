@@ -1,16 +1,16 @@
 <div class="top">
 
 
-   <div class="top-content">
+   <div class="top_content">
 
     <h2 class="title">BACKPACK</h2>
     
     <% if user_signed_in? %>
-      <p class="top-text">旅行に出かけよう</p>
+      <p class="top_text">旅行に出かけよう</p>
       
     <% else %>
     
-      <div class="top-button">
+      <div class="top_button">
         <%= link_to "新規登録", new_user_registration_path, class: "button" %>
     
         <%= link_to "ログイン", new_user_session_path, class: "button" %>

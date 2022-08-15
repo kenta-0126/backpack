@@ -1,7 +1,11 @@
 <div class="mypage">
 
-  <div class="calender-box">
-
+    <div class="event">
+      <%= link_to "予定を追加する", new_event_path, class: "event-button" %>
+    </div>
+    
+  <div class="calender_box">
+    
     <div class="calender">
       <%= month_calendar events: @user.events do |date, events| %>
         <%= date.day %>
@@ -16,6 +20,7 @@
     </div>
     
     <div class="item_box">
+      <h2>イベントタイトル</h2>
      
       <table>
         <tr>
@@ -31,23 +36,19 @@
       </table>
       
     </div>
-
-    <div class="event">
-      <%= link_to "予定を追加する", new_event_path %>
-    </div>
-
+   
   </div>
 
-  <div class="user-content">
-
+  <div class="user_content">
+    
     <div>
-      <%= link_to "登録情報の変更", edit_user_path(@user) %>
+      <%= link_to "登録情報の変更", edit_user_path(@user), class: "edit" %>
     </div>
-
+    
     <div>
-      <%= link_to "退会する", users_confirm_path(@user) %>
+      <%= link_to "退会する", users_confirm_path(@user), class: "delete" %>
     </div>
-
+    
   </div>
 
 </div>
