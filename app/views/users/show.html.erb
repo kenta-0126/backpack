@@ -18,10 +18,11 @@
         
       <% end %>
     </div>
-    
+   </div>
+   
     <div class="main_box wrapper">
       <div class="event_box">
-        <h2>イベントタイトル</h2>
+        <h2><%= @event.title%></h2>
         <table>
           <tr>
             <% @genres.each do |genre| %>
@@ -36,13 +37,14 @@
       </div>
       
       <div class="item_box">
-      　<h3>アイテム一覧</h3>
+        
+      　<h3  class="item_title">アイテム一覧</h3>
       　<% @items.each do |item| %>
       　<%= item.name %>
       　<% end %>
     　</div>
     </div>
-  </div>
+ 
 
   <div class="user_content">
     <div>
