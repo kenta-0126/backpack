@@ -6,8 +6,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @genre = @event.genre
-    @genres = @event.genres
+    @genre = Genre.find(params[id])
+    @genres = Genre.all
     @item = @genre.item
     @items = @genre.items
   end
