@@ -21,27 +21,15 @@
    </div>
    
     <div class="main_box wrapper">
-      <div class="event_box">
-        <h2><%= @event.title%></h2>
-        <table>
-          <tr>
-            <% @genres.each do |genre| %>
-            <th><%= genre.name %></th>
-            <% end %>
-            
-            <% @items.each do |item| %>
-            <td><%= item.name %></td>
-            <% end %>
-          </tr>
-        </table>
-      </div>
+      <%= render 'events/list', event: @event, genre: @genre %>
       
       <div class="item_box">
-        
       　<h3  class="item_title">アイテム一覧</h3>
-      　<% @items.each do |item| %>
-      　<%= item.name %>
-      　<% end %>
+        　<div>
+          　<% @items.each do |item| %>
+          　<%= item.name %>
+          　<% end %>
+          </div>
     　</div>
     </div>
  

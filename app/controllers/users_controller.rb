@@ -4,8 +4,6 @@ class UsersController < ApplicationController
     @user = current_user
     @event = Event.new
     @events = Event.all
-    @genre = @user.genres
-    @genres = @user.genres
     @items = Item.all
   end
 
