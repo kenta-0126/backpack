@@ -23,14 +23,7 @@
     <div class="main_box wrapper">
       <%= render 'events/list', event: @event, genre: @genre %>
       
-      <div class="item_box">
-      　<h3  class="item_title">アイテム一覧</h3>
-        　<div>
-          　<% @items.each do |item| %>
-          　<%= item.name %>
-          　<% end %>
-          </div>
-    　</div>
+      <%= render 'items/list', items: @items %>
     </div>
  
 
