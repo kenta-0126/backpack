@@ -15,10 +15,10 @@ class ItemsController < ApplicationController
   def index
     @item = Item.all
   end
-  
+
   def show
     @item = Item.find(params[:id])
-    @items = Item.
+
   end
 
   def edit
@@ -30,10 +30,11 @@ class ItemsController < ApplicationController
     @item.update(item_params)
   end
 
-  
+
   private
-  
+
   def item_params
     params.require(:item).permit(:name,:genre_id,:event_id)
   end
+
 end

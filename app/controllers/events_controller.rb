@@ -6,12 +6,12 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @genre = Genre.find(params[id])
+    @genre = Genre.find(params[:id])
     @genres = Genre.all
     @item = @genre.item
     @items = @genre.items
   end
-  
+
   def new
     @event = Event.new
     @evenrs = Event.all
@@ -24,6 +24,13 @@ class EventsController < ApplicationController
     else
        render :new
     end
+
+    def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to users_my_page_path(current_user)
+    end
+    
   end
 
   private
