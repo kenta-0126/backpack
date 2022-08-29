@@ -3,7 +3,7 @@
 　<h3  class="item_title">アイテム一覧</h3>
     <div>
       <% items.each do |item| %>
-      <%= item.name %>
+      <%= link_to item.name %>
       <% end %>
     </div>
 </div>

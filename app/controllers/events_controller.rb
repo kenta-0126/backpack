@@ -5,11 +5,12 @@ class EventsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @event = Event.find(params[:id])
     @genre = Genre.find(params[:id])
     @genres = Genre.all
-    @item = @genre.item
-    @items = @genre.items
+    @item = @event.genre.item
+    @items = @event.genre.items
   end
 
   def new
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to users_my_page_path(current_user)
     end
-    
+
   end
 
   private

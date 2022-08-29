@@ -3,36 +3,37 @@
     <div class="event_content">
       <%= link_to "予定を追加する", new_event_path, class: "event" %>
     </div>
-    
+
   <div class="calender_box">
-    
+
     <div class="calender">
       <%= month_calendar events: @user.events do |date, events| %>
         <%= date.day %>
-        
+
         <% events.each do |event| %>
           <div>
             <%= link_to event.title %>
             <%= link_to "削除する", event_path(event.id), method: :delete, data: { confirm: "Are you sure?"} %>
           </div>
         <% end %>
-        
+
       <% end %>
     </div>
    </div>
-   
+
     <div class="main_box wrapper">
-      <%= render 'events/list', event: @event, genres: @genres %>
       
+      <%= render 'events/list', event: @event, genres: @genres %>
+
       <%= render 'items/list', items: @items %>
     </div>
- 
+
 
   <div class="user_content">
     <div>
       <%= link_to "登録情報の変更", edit_user_path(@user), class: "edit" %>
     </div>
-    
+
     <div>
       <%= link_to "退会する", users_confirm_path(@user), class: "delete" %>
     </div>
