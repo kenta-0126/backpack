@@ -1,8 +1,9 @@
 class GenresController < ApplicationController
 
   def new
+    @user = current_user
     @genre = Genre.new
-    @genres = Genre.all
+    @genres = @user.genres
   end
 
   def create
@@ -13,7 +14,8 @@ class GenresController < ApplicationController
   end
 
   def index
-    @genres = Genre.all
+    @user = User.find(params[:id])
+    @genres = @user.genres
   end
 
   def edit
