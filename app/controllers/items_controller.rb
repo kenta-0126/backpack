@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
     @item.save
     redirect_to new_item_path
   end
@@ -34,7 +35,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name,:genre_id,:event_id)
+    params.require(:item).permit(:name,:genre_id,:event_id, :user_id)
   end
 
 end

@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @user = current_user
+    @events = @user.events
   end
 
   def show
@@ -9,8 +10,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @genre = Genre.find(params[:id])
     @genres = Genre.all
-    @item = @event.genre.item
-    @items = @event.genre.items
+    @item = Item.find(params[:event_id])
+    @items = Item.find(params[:event_id])
   end
 
   def new
@@ -37,7 +38,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :start_time).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :start_time,:item_id).merge(user_id: current_user.id)
   end
 
 end
