@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
 
   def new
+    @user = current_user
     @item = Item.new
-    @items = Item.all
-    @genres = Genre.all
+    @items = @user.item
+    @genres = @user.genres
   end
 
   def create
