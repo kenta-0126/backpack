@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :events, onry: [:index, :show, :new, :create, :destroy]
+  resources :events, onry: [:index, :new, :create, :destroy]
+   get 'events/show' => 'events#show'
 
   resources :genres, onry: [:new, :create, :index, :edit, :update]
 

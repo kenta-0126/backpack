@@ -12,7 +12,7 @@
 
         <% events.each do |event| %>
           <div>
-            <%= link_to event.title %>
+            <%= link_to event.title, events_path(event.id) %>
             <%= link_to "削除する", event_path(event.id), method: :delete, data: { confirm: "Are you sure?"} %>
           </div>
         <% end %>
@@ -22,9 +22,10 @@
    </div>
 
     <div class="main_box wrapper">
-      
-      <%= render 'events/list', event: @event, genres: @genres %>
-      
+      <%= label_tag @event.select_event.title %>
+
+      <%= render 'events/show', event: @event, genres: @genres %>
+
       <%= render 'items/list', user: @user , items: @items %>
     </div>
 

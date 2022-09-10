@@ -8,7 +8,10 @@
                 <th><%= genre.name %></th>
 
                 <% genre.items.each do |item| %>
-                <td><%= item.name %></td>
+                <td>
+                  <%= check_box_tag :item %>
+                  <%= item.name %>
+                </td>
                 <% end %>
               <% end %>
             </tr>
