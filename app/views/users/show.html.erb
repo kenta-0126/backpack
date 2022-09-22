@@ -22,17 +22,16 @@
    </div>
 
     <div class="main_box wrapper">
-    <% if @events.any? %>
-     <h2><%= @event.titleize %></h2>
+      <% if @events.any? %>
+      <%= render 'events/show', event: @event, genres: @genres, items: @items, item: @item %>
 
-      <%= render 'events/show', event: @event, genres: @genres %>
-    <% elsif %>
-     <div>予定がありません</div>
-    <% end %>
-    
+
       <%= render 'items/list', user: @user , items: @items %>
+      <% elsif %>
+          <div>予定がありません</div>
+      <% end %>
     </div>
-  
+
   <div class="user_content">
     <div>
       <%= link_to "登録情報の変更", edit_user_path(@user), class: "edit" %>

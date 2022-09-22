@@ -5,13 +5,14 @@ class UsersController < ApplicationController
     @user = current_user
     @events = @user.events
     @events.each do |event|
-      if event.start_time < @today
-        @event = @user.events.minimum(:title)
-     
+      if event.start_time >= @today
+        @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
     @genres = @user.genres
     @items = @user.item
+    @item = Item.find_by(user_id: @user, event_id: @event)
+
   end
 
   def edit

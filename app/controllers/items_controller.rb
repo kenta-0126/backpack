@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
+    @item.update(:event_id)
   end
 
 
