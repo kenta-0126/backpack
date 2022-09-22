@@ -28,14 +28,21 @@ class EventsController < ApplicationController
     else
        render :new
     end
+  end
 
-    def destroy
+  def destroy
+    @today = Date.today
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to users_my_page_path(current_user)
+    @events.each do |event|
+      if event.start_time < @today
+         event_destroy
+      end
     end
-
+    redirect_to users_my_page_path(current_user)
   end
+
+
 
   private
 

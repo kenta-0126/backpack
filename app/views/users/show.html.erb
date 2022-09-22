@@ -22,7 +22,7 @@
    </div>
 
     <div class="main_box wrapper">
-      <%= label_tag @event.select_event.title %>
+     <h2><%= @event.titleize %></h2>
 
       <%= render 'events/show', event: @event, genres: @genres %>
 

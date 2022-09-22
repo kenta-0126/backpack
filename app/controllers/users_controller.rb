@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def show
-    today = Date.today
+    @today = DateTime.now
     @user = current_user
-    @event = Event.new
     @events = Event.all
-    @serect_event = Event.(today - @event.start_time)
+    if 
+    @event = @user.events.minimum(:title)
     @genres = @user.genres
     @items = @user.item
   end
