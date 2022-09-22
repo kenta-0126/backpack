@@ -2,22 +2,21 @@
       <div class="event_box">
 
          <h2><%= event.title %></h2>
-          <table>
-            <tr>
-              <% genres.each do |genre| %>
+          <% if event_items.any? %>
+           <table>
+             <tr>
+             <% genres.each do |genre| %>
                 <th><%= genre.name %></th>
-
-                <% if items.any? %>
-                  <% genre.items.each do |item| %>
+                  <% genre.event_items.each do |item| %>
                   <td>
-                    <%= check_box_tag :item, item.name %>
-
+                    <%= check_box_tag :item %>
+                    <%= item.name %>
                   </td>
                   <% end %>
-                <% elsif %>
-                  <div>荷物が追加されていません</div>
-                <% end %>
-              <% end %>
+               <% end %>
+          <% elsif %>
+            <div>荷物が追加されていません</div>
+          <% end %>
             </tr>
           </table>
 

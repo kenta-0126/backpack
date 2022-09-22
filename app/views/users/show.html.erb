@@ -23,7 +23,7 @@
 
     <div class="main_box wrapper">
       <% if @events.any? %>
-      <%= render 'events/show', event: @event, genres: @genres, items: @items, item: @item %>
+      <%= render 'events/show', event: @event, genres: @genres, event_items: @event_items, item: @item %>
 
 
       <%= render 'items/list', user: @user , items: @items %>

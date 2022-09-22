@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     end
     @genres = @user.genres
     @items = @user.item
-    @item = Item.find_by(user_id: @user, event_id: @event)
+    @event_items = Item.where(event_id: @event)
+    
 
   end
 
