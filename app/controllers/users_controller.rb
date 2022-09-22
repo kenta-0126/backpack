@@ -3,9 +3,13 @@ class UsersController < ApplicationController
   def show
     @today = DateTime.now
     @user = current_user
-    @events = Event.all
-    if 
-    @event = @user.events.minimum(:title)
+    @events = @user.events
+    @events.each do |event|
+      if event.start_time < @today
+        @event = @user.events.minimum(:title)
+     
+      end
+    end
     @genres = @user.genres
     @items = @user.item
   end

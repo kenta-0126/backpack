@@ -9,7 +9,6 @@ class EventsController < ApplicationController
   def show
     today = Date.today
     @user = current_user
-    @event = Event.where(today - start_time).min
     @genre = Genre.find(params[:id])
     @genres = Genre.all
     @item = @event.item
@@ -34,11 +33,6 @@ class EventsController < ApplicationController
     @today = Date.today
     @event = Event.find(params[:id])
     @event.destroy
-    @events.each do |event|
-      if event.start_time < @today
-         event_destroy
-      end
-    end
     redirect_to users_my_page_path(current_user)
   end
 
