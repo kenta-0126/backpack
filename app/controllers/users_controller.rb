@@ -1,19 +1,17 @@
 class UsersController < ApplicationController
 
   def show
-    @today = DateTime.now
+    @today = DateTime.now.to_time
     @user = current_user
     @events = @user.events
     @events.each do |event|
-      if event.start_time >= @today
+      if event.start_time.to_time == @today or event.start_time > @today
         @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
     @genres = @user.genres
     @items = @user.item
-    @event_items = Item.where(event_id: @event)
-    
-
+    @event_items = Item.where(event_id: @event.id)
   end
 
   def edit

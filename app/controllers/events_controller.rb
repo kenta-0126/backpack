@@ -7,10 +7,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    today = Date.today
+    @today = DateTime.today
     @user = current_user
     @genre = Genre.find(params[:id])
     @genres = Genre.all
+    @evenrs = Event.all
     @events.each do |event|
       if event.start_time < @today
         @event = Event.find_by(start_time: Event.minimum(:start_time))

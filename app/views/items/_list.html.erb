@@ -3,7 +3,7 @@
 　<h3  class="item_title">アイテム一覧</h3>
     <div>
       <% items.each do |item| %>
-      <li><%= link_to item.name %></li>
+      <li><%= link_to item.name, item_path(item, params: { event_id: @event}), :method => :put %></li>
       <% end %>
     </div>
 </div>

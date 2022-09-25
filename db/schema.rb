@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_121408) do
 
   create_table "items", force: :cascade do |t|
     t.integer "genre_id"
-    t.integer "event_id"
+    t.integer "event_id", default: 0
     t.integer "user_id"
     t.string "name"
     t.datetime "created_at", null: false

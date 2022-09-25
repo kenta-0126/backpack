@@ -28,15 +28,24 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @today = DateTime.now
     @item = Item.find(params[:id])
-    @item.update(:event_id)
+    @user = current_user
+    @events = @user.events
+    @events.each do |event|
+      if event.start_time >= @today
+        @event = Event.find_by(start_time: Event.minimum(:start_time))
+      end
+    end
+    @item.update(item_params)
+    redirect_to users_my_page_path(@user)
   end
 
 
   private
 
   def item_params
-    params.require(:item).permit(:name,:genre_id,:event_id, :user_id)
+    params.permit(:name, :genre_id, :event_id, :user_id)
   end
 
 end
