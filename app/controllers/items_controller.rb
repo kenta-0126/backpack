@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
         @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
-    @item.update(item_params)
+    @item.update(event_id: @event.id)
     redirect_to users_my_page_path(@user)
   end
 
@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(:name, :genre_id, :event_id, :user_id)
+    params.require(:item).permit(:name, :genre_id, :event_id, :user_id)
   end
 
 end
