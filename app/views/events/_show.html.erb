@@ -10,7 +10,7 @@
                     <% if item.event_id == event.id %>
                     <td>
                       <%= check_box_tag :item %>
-                      <%= item.name %>
+                      <%= label_tag :item, item.name %>
                     </td>
                     <% end %>
                   <% end %>

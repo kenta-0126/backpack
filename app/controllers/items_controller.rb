@@ -40,8 +40,12 @@ class ItemsController < ApplicationController
     @item.update(event_id: @event.id)
     redirect_to users_my_page_path(@user)
   end
-
-
+  
+  def destroy
+    @today = DateTime.now
+    @item
+  end
+  
   private
 
   def item_params
