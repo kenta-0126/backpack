@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :genres, onry: [:new, :create, :index, :edit, :update]
 
-  resources :items, onry: [:new, :create, :edit, :update]
+  resources :items, onry: [:new, :create, :edit, :update, :destroy]
 
   get 'users/my_page' => 'users#show'
   get 'users/confirm' => 'users#confirm'
