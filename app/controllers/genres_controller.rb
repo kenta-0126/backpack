@@ -1,5 +1,4 @@
 class GenresController < ApplicationController
-
   def new
     @user = current_user
     @genre = Genre.new
@@ -10,7 +9,6 @@ class GenresController < ApplicationController
     @genre = Genre.new(genre_params)
     @genre.save!
     redirect_to new_genre_path
-
   end
 
   def index

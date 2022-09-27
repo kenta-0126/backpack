@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   def new
     @user = current_user
     @item = Item.new
@@ -20,7 +19,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-
   end
 
   def edit
@@ -33,37 +31,19 @@ class ItemsController < ApplicationController
     @user = current_user
     @events = @user.events
     @events.each do |event|
-      if event.start_time >= @today
+      if event.start_time.strftime('%Y-%m-%d') >= @today.strftime('%Y-%m-%d')
         @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
     @item.update(event_id: @event.id)
 
-
-    if @event.start_time.strftime('%Y-%m-%d') < @today.strftime('%Y-%m-%d')
-      Item.update_all(event_id: 0)
-    end
-
+    Item.update_all(event_id: 0) if @event.start_time.strftime('%Y-%m-%d') < @today.strftime('%Y-%m-%d')
     redirect_to users_my_page_path(@user)
-  end
-
-  def destroy
-    @today = DateTime.now.to_time
-    @user = current_user
-    @events = @user.events
-    @events.each do |event|
-      if event.start_time.strftime('%Y-%m-%d') < @today.strftime('%Y-%m-%d')
-        @event = Event.find_by(start_time: Event.minimum(:start_time))
-      end
-    end
-    @items =@user.items
-    @items.delete_all.where(event_id: @event.id)
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :genre_id, :event_id, :user_id)
+    params.require(:item).permit(:name, :genre_id, :event_id, :user_id, check_box: [])
   end
-
 end

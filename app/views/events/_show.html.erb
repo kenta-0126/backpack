@@ -6,14 +6,16 @@
              <tr>
              <% genres.each do |genre| %>
                 <th><%= genre.name %></th>
-                  <% genre.items.each do |item| %>
-                    <% if item.event_id == event.id %>
-                    <td>
-                      <%= check_box_tag :item %>
-                      <%= label_tag :item, item.name %>
-                    </td>
+                    <% genre.items.each do |item| %>
+                      <% if item.event_id == event.id %>
+                      <% form_with model: @item, local: true do |form| %>
+                      <td>
+                        <%= form.check_box :check_box, {multiple:true}, checked: true %>
+                        <%= form.label item.name %>
+                      </td>
+                      <% end %>
+                      <% end %>
                     <% end %>
-                  <% end %>
                <% end %>
 
             </tr>

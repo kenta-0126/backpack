@@ -1,17 +1,15 @@
 class UsersController < ApplicationController
-
   def show
     @today = DateTime.now.to_time
     @user = current_user
     @events = @user.events
     @events.each do |event|
-      if event.start_time.strftime('%Y-%m-%d') >= @today.strftime('%Y-%m-%d') 
+      if event.start_time.strftime('%Y-%m-%d') >= @today.strftime('%Y-%m-%d')
         @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
     @genres = @user.genres
     @items = @user.item
-    
   end
 
   def edit
@@ -30,7 +28,7 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(current_user.id)
-    @user.update(is_active: 1) #1で退会済みの論理削除
+    @user.update(is_active: 1) # 1で退会済みの論理削除
     reset_session
     redirect_to root_path
   end
@@ -38,7 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-   params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :is_active)
+    params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :email, :is_active)
   end
-
 end

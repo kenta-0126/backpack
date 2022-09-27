@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   def index
     @user = current_user
     @evevt = Event.new
@@ -13,9 +12,7 @@ class EventsController < ApplicationController
     @genres = Genre.all
     @evenrs = Event.all
     @events.each do |event|
-      if event.start_time < @today
-        @event = Event.find_by(start_time: Event.minimum(:start_time))
-      end
+      @event = Event.find_by(start_time: Event.minimum(:start_time)) if event.start_time < @today
     end
   end
 
@@ -27,9 +24,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-       redirect_to users_my_page_path(current_user)
+      redirect_to users_my_page_path(current_user)
     else
-       render :new
+      render :new
     end
   end
 
@@ -39,12 +36,9 @@ class EventsController < ApplicationController
     redirect_to users_my_page_path(current_user)
   end
 
-
-
   private
 
   def event_params
     params.require(:event).permit(:title, :start_time, :item_id).merge(user_id: current_user.id)
   end
-
 end

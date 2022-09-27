@@ -9,8 +9,6 @@ class User < ApplicationRecord
   has_many :item
 
   def active_for_authentication?
-    super && (self.is_active == 0 )
+    super && (is_active == 0)
   end
-
-
 end
