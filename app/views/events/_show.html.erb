@@ -1,26 +1,28 @@
 
-      <div class="event_box">
-
-         <h2><%= event.title %></h2>
+    <div class="event_box">
+      
+        <h2><%= event.title %></h2>
            <table>
              <tr>
              <% genres.each do |genre| %>
                 <th><%= genre.name %></th>
                     <% genre.items.each do |item| %>
                       <% if item.event_id == event.id %>
-                      <% form_with model: @item, local: true do |form| %>
+                      
                       <td>
-                        <%= form.check_box :check_box, {multiple:true}, checked: true %>
-                        <%= form.label item.name %>
+                        <%= check_box_tag :item, {multiple: true}, checked: true %>
+                        <%= label_tag item.name %>
                       </td>
                       <% end %>
+                      
+
                       <% end %>
                     <% end %>
                <% end %>
 
             </tr>
           </table>
-
-
-
-      </div>
+          
+      
+      
+    </div>

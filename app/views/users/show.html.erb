@@ -23,13 +23,14 @@
 
     <div class="main_box wrapper">
       <% if @events.any? %>
-      <%= render 'events/show', event: @event, genres: @genres, event_items: @event_items, item: @item %>
-
-
-      <%= render 'items/list', user: @user , items: @items %>
-      <% elsif %>
+      
+      <%= render 'events/show', event: @event, genres: @genres, item: @item %>
+      <% else %>
           <div>予定がありません</div>
       <% end %>
+
+      <%= render 'items/list', user: @user , items: @items %>
+
     </div>
 
   <div class="user_content">

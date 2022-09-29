@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     end
     @genres = @user.genres
     @items = @user.item
+    @item = Item.where(event_id: @event)
+
   end
 
   def edit
