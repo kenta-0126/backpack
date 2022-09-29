@@ -17,7 +17,7 @@
 }
 
 .calender_box {
-  
+
 }
 
 .calender {
@@ -35,11 +35,14 @@
   display: block ;
   margin: 0 auto ;
   padding: 70px 0 ;
+  
 }
+
+
 
 .item_box {
   width: 22% ;
-  diplay: block ;
+  display: block ;
 }
 
 .item_title {
@@ -49,7 +52,9 @@
 }
 
 .user_content {
-  
+  display: flex ;
+  position: sticky ;
+  top: 100vh ;
 }
 
 .edit {
@@ -62,6 +67,23 @@
 }
 
 .delete {
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
+}
+
+.confirm {
+
+}
+
+.button_box {
+  display: flex ;
+}
+
+.button {
   font-size: 1rem ;
   background: #0bd ;
   color: #fff ;

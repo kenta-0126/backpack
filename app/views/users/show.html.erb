@@ -1,4 +1,7 @@
 <div class="mypage">
+  <div class="mypage_content">
+    
+  
 
     <div class="event_content">
       <%= link_to "予定を追加する", new_event_path, class: "event" %>
@@ -16,7 +19,7 @@
             <%= link_to "削除する", event_path(event.id), method: :delete, data: { confirm: "Are you sure?"} %>
           </div>
         <% end %>
-
+        
       <% end %>
     </div>
    </div>
@@ -25,11 +28,13 @@
       <% if @events.any? %>
       
       <%= render 'events/show', event: @event, genres: @genres, item: @item %>
+      
+      <%= render 'items/list', user: @user , items: @items %>
+      
       <% else %>
-          <div>予定がありません</div>
+          <div class="messege">予定がありません</div>
       <% end %>
 
-      <%= render 'items/list', user: @user , items: @items %>
 
     </div>
 
@@ -41,6 +46,8 @@
     <div>
       <%= link_to "退会する", users_confirm_path(@user), class: "delete" %>
     </div>
+  </div>
+  
   </div>
 
 </div>

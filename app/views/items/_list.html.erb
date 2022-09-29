@@ -4,7 +4,11 @@
     <div>
 
        <% items.each do |item| %>
+       <% if items.any? %>
         <li><%= link_to item.name, item_path(item), :method => :put, params: {event_id: @event.id} %></li>
+       <% else %>
+       <li><%= item.name %></li>
+       <% end %>
       <% end %>
     </div>
 </div>

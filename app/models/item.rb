@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   has_many :event
   
   validates :genre_id, presence: true
+  
+  
 end
