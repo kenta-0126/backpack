@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Genre.create!(
-  name: 'いつものカバン'
+  name: 'いつものカバン', genre_id: 0
 )

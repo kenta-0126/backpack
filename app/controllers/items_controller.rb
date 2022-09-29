@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     @item.save
-    redirect_to new_item_path
+     redirect_to new_item_path
   end
 
   def index
