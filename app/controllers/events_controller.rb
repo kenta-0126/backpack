@@ -6,14 +6,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @today = DateTime.today
-    @user = current_user
-    @genre = Genre.find(params[:id])
-    @genres = Genre.all
-    @evenrs = Event.all
-    @events.each do |event|
-      @event = Event.find_by(start_time: Event.minimum(:start_time)) if event.start_time < @today
-    end
   end
 
   def new
@@ -29,6 +21,10 @@ class EventsController < ApplicationController
       render :new
     end
   end
+  
+  def update
+  
+  end 
 
   def destroy
     @event = Event.find(params[:id])
@@ -41,4 +37,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :start_time, :item_id).merge(user_id: current_user.id)
   end
+  
 end

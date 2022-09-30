@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     @events = @user.events
     @events.each do |event|
       if event.start_time.strftime('%Y-%m-%d') >= @today.strftime('%Y-%m-%d')
-        @event = Event.find_by(start_time: Event.minimum(:start_time))
+           @event = Event.find_by(start_time: Event.minimum(:start_time))
+      else
+            @event = Event.find_by(id: 0)
       end
     end
     @genres = @user.genres

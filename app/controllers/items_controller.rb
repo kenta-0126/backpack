@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @today = DateTime.now
+    @today = DateTime.now.to_time
     @item = Item.find(params[:id])
     @user = current_user
     @events = @user.events

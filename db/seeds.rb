@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Genre.create!(
-  name: 'いつものカバン', genre_id: 0
-)
+  id: 0, name: 'いつものかばん'
+  )
+
+Event.create!(
+  id: 0, user_id: 0, title: '予定がありません', start_time: DateTime.tomorrow.to_time
+  )
