@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     @user = current_user
     @events = @user.events
     @event = @events.min_by{|event| (@today - event.start_time).abs}
-    @item.update_attribute(:event_id, @event.id)
+    @item.update(event_id: @event.id, check_box: false)
     
     if @event.start_time.strftime('%Y-%m-%d') < @today.strftime('%Y-%m-%d')
       Item.update_all(event_id: 0, check_box: false)
