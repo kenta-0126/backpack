@@ -2,3 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.event_title {
+  display: inline;
+	font-size: 26px;
+	background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(252,81,133) 70%);
+}
+
+.event_table {
+  display: flex ;
+  text-aline: center;
+}
+
+.genre_title {
+  font-size: 18px ;
+  border-bottom: double 5px #FFC778;
+}
+
+.event_item {
+  padding: 12px 10px ;
+}

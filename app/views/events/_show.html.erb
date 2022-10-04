@@ -1,40 +1,41 @@
 
-    <div class="event_box">
-
-        <h2>
-            <%= event.title %>
-        </h2>
-
-           <div>
-
-             <% genres.each do |genre| %>
-               <label>
-                   <%= genre.name %>
-               </label>
-                    <% genre.items.each do |item| %>
-                      <% if item.event_id == event.id %>
-                       <%= form_with url: update_check_box_item_path(item), method: :patch, local: true do |f| %>
-                       <li>
-                         <%= f.check_box :check_box, {checked: item.check_box, multiple: true}, checked_value = true , unchecked_value = false %>
-                         <%= f.label item.name %>
-                       </li>
-
-                      <div>
-                          <%= f.submit %>
-                      </div>
-
-                      <% end %>
-
-                      <% end %>
 
 
-                      <% end %>
-                    <% end %>
+ <h2 class="event_title">
+  <%= event.title %>
+ </h2>
+
+  <div class="event_table">
+    <table>
+        <tbody>
+            <% genres.each do |genre| %>
+            <tr>
+               <th class="genre_title">
+                 <%= label_tag genre.name %>
+               </th>
+
+               <div>
+                 <% genre.items.each do |item| %>
+                 <% if item.event_id == event.id %>
+                 <%= form_with url: update_check_box_item_path(item), method: :patch, local: true do |f| %>
+                <td class="event_item">
+                  <%= f.check_box :check_box, {checked: item.check_box, multiple: true}, checked_value = true , unchecked_value = false %>
+                  <%= f.label item.name %>
+                  <%= f.submit %>
+                </td>
+                  
+                <% end %>
+                <% end %>
+                <% end %>
+               </div>
+
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+  </div>
 
 
-          </div>
 
 
-
-
-    </div>
