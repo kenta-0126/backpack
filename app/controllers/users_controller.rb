@@ -3,17 +3,10 @@ class UsersController < ApplicationController
     @today = DateTime.now.to_time
     @user = current_user
     @events = @user.events
-    @events.each do |event|
-      if event.start_time.strftime('%Y-%m-%d') >= @today.strftime('%Y-%m-%d')
-           @event = Event.find_by(start_time: Event.minimum(:start_time))
-      else
-            @event = Event.find_by(id: 0)
-      end
-    end
+    @event = @events.min_by{|event| (@today - event.start_time).abs}
     @genres = @user.genres
     @items = @user.item
     @item = Item.where(event_id: @event)
-
   end
 
   def edit

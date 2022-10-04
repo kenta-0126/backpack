@@ -15,8 +15,8 @@
 
         <% events.each do |event| %>
           <div>
-            <%= link_to event.title, events_path(event.id) %>
-            <%= link_to "削除する", event_path(event.id), method: :delete, data: { confirm: "Are you sure?"} %>
+            <%= label_tag event.title %>
+            <%= link_to "削除する", event_path(event.id), method: :delete, data: { confirm: "イベントを削除しますか?"} %>
           </div>
         <% end %>
         

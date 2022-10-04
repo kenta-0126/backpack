@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     @item.save
-     redirect_to new_item_path
+    redirect_to new_item_path
   end
 
   def index
@@ -35,27 +35,25 @@ class ItemsController < ApplicationController
         @event = Event.find_by(start_time: Event.minimum(:start_time))
       end
     end
-    
+
     @item.update(event_id: @event.id)
-    
-    if {check_box: @item.check_box? == true} 
-     @item.update(check_box: true)
-    else 
-     @item.update(check_box: false)
+
+    if { check_box: @item.check_box? == true }
+      @item.update(check_box: true)
+    else
+      @item.update(check_box: false)
     end
-    
+
     if @event.start_time.strftime('%Y-%m-%d') < @today.strftime('%Y-%m-%d')
-       Item.update_all(event_id: 0,check_box: false)
+      Item.update_all(event_id: 0, check_box: false)
     end
-    
+
     redirect_to users_my_page_path(@user)
   end
-  
- 
-  
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :genre_id, :event_id, :user_id, check_box:[])
+    params.require(:item).permit(:name, :genre_id, :event_id, :user_id, check_box: [])
   end
 end

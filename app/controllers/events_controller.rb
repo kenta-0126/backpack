@@ -1,12 +1,11 @@
 class EventsController < ApplicationController
   def index
     @user = current_user
-    @evevt = Event.new
+    @evet = Event.new
     @events = @user.events
   end
 
-  def show
-  end
+  
 
   def new
     @event = Event.new
@@ -19,9 +18,7 @@ class EventsController < ApplicationController
     redirect_to users_my_page_path(current_user)
   end
 
-  def update
-
-  end
+  def update; end
 
   def destroy
     @event = Event.find(params[:id])
@@ -34,5 +31,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :start_time, :item_id).merge(user_id: current_user.id)
   end
-
 end

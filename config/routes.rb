@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :genres, onry: %i[new create index edit update]
 
   resources :items, onry: %i[new create edit update]
-  
 
   get 'users/my_page' => 'users#show'
   get 'users/confirm' => 'users#confirm'

@@ -8,8 +8,4 @@
 
 Genre.create!(
   id: 0, name: 'いつものかばん'
-  )
-
-Event.create!(
-  id: 0, user_id: 0, title: '予定がありません', start_time: DateTime.tomorrow.to_time
-  )
+)
