@@ -5,19 +5,24 @@
             <%= event.title %>
         </h2>
 
-           <table>
-             <tr>
+           <div>
+
              <% genres.each do |genre| %>
-                <th><%= genre.name %></th>
+               <label>
+                   <%= genre.name %>
+               </label>
                     <% genre.items.each do |item| %>
                       <% if item.event_id == event.id %>
-                      <td>
-                        <%= form_with model: item, local: true do |f| %>
-                        <%= f.check_box :check_box, {checked: item.check_box}, checked_value = true , unchecked_value = 0 %>
-                        <%= f.label item.name %>
-                      </td>
+                       <%= form_with url: update_check_box_item_path(item), method: :patch, local: true do |f| %>
+                       <li>
+                         <%= f.check_box :check_box, {checked: item.check_box, multiple: true}, checked_value = true , unchecked_value = false %>
+                         <%= f.label item.name %>
+                       </li>
 
-                      <%= f.submit %>
+                      <div>
+                          <%= f.submit %>
+                      </div>
+
                       <% end %>
 
                       <% end %>
@@ -27,8 +32,7 @@
                     <% end %>
 
 
-            </tr>
-          </table>
+          </div>
 
 
 

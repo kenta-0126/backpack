@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
   resources :genres, onry: %i[new create index edit update]
 
-  resources :items, onry: %i[new create edit update]
-
+  resources :items, onry: %i[new create edit update] do
+    member do
+      patch 'update_check_box'
+    end
+  end
+  
   get 'users/my_page' => 'users#show'
   get 'users/confirm' => 'users#confirm'
   resources :users, onry: %i[edit update] do
