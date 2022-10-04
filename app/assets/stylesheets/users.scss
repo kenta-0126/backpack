@@ -52,7 +52,7 @@
 
 .user_content {
   display: flex ;
-  position: sticky ;
+  align-items: center ;
   top: 100vh ;
 }
 
@@ -75,15 +75,26 @@
 }
 
 .confirm {
+  position: absolute ;
+  top: 40% ;
+  left: 50% ;
+  margin-right: -50% ;
+  transform: translate(-50%, -50%) ;
+  text-align: center ;
+}
 
+.confirm_title {
+  padding: 30px ;
+  font-size: 3rem ;
 }
 
 .button_box {
   display: flex ;
+  justify-content: space-between ;
 }
 
 .button {
-  font-size: 1rem ;
+  font-size: 2rem ;
   background: #0bd ;
   color: #fff ;
   border-radius: 5px ;
