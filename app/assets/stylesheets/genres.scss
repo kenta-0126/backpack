@@ -1,3 +1,31 @@
 // Place all the styles related to the Genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.genre_page {
+  padding: 50px ;
+  text-align: center ;
+}
+
+.genre_title {
+
+}
+
+.genre_button {
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
+}
+
+.genre_box {
+  margin: 0 auto ;
+  padding: 70px ;
+}
+
+.genre_name {
+  padding: 20px ;
+  font-size: 1rem ;
+  flex-wrap: wrap ;
+}
