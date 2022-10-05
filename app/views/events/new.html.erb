@@ -1,33 +1,31 @@
 <div class="event_page">
-  
-  <div class="event_create">
-    <div class="page_title">
-      <h1>イベント追加ページ</h1>
+
+    <div>
+      <h2 class="page_title">予定を追加しますか？</h2>
     </div>
-    
+
     <div class="event_form">
-      <%= form_with model: @event, url: events_path, local: true do |f| %>
+      
       <table>
-        
+        <%= form_with model: @event, url: events_path, local: true do |f| %>
         <tr>
-          <th>イベント追加</th>
-          <td><%= f.text_field :title, class: "form"%></td>
+          <th>予定を追加</th>
+          <td><%= f.text_field :title, placeholder: "予定を追加", class: "form" %></td>
         </tr>
-        
+
         <tr>
           <th>予定日</th>
           <td><%= f.datetime_select :start_time, class: "form" %></td>
         </tr>
-        
+
         <tr>
           <th></th>
           <td><%= f.submit "新規登録", class: "event_button" %></td>
         </tr>
-        
+        <% end %>
       </table>
-      <% end %>
+      
     </div>
-  </div>
- 
+
 
 </div>

@@ -1,8 +1,8 @@
 <div class="edit_page">
-  <h1 class="edit_title">ユーザー情報編集ページ</h1>
+  <h2 class="edit_title">登録情報の編集を行います</h2>
   
   <%= form_with model: @user, local: true do |f| %>
-  <table class="form_item">
+  <table class="user_edit">
     <tr>
       <th>氏名</th>
       <td><%= f.text_field :first_name, autofocus: true, id: "inputFirst_name", placeholder: "姓", class: "form" %></td>
@@ -22,8 +22,9 @@
     
     <tr>
       <th></th>
-      <td><%= f.submit "変更を登録", class: "edit_button" %></td>
+      <td></td>
     </tr>
   </table>
+  <%= f.submit "変更を登録", class: "edit_button" %>
   <% end %>
 </div>

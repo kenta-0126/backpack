@@ -18,13 +18,13 @@
 
 
 * {
- 
+
   padding: 0 ;
   box-sizing: border-box ;
 }
 
 .logo {
-  width: 100px;
+  width: 150px ;
   margin-top: 12px;
 }
 
@@ -60,10 +60,19 @@
   text-align: center ;
 }
 
-.form-item {
+.login_form {
   margin: 0 auto;
   padding: 15px ;
   position: relative ;
+}
+
+.login_button {
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
 }
 
 .form {
@@ -78,10 +87,19 @@
   -moz-appearance: none;
 }
 
-.sign_in  {
+.sign_in {
   padding-top: 55px ;
 }
 
 .sign_in_box {
   text-align: center ;
+}
+
+.sign_in_button {
+  font-size: 1rem ;
+  background: #0bd ;
+  color: #fff ;
+  border-radius: 5px ;
+  padding: 10px 22px ;
+  margin-left: 20px ;
 }

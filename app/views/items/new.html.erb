@@ -8,10 +8,8 @@
   <div class="item_page_box">
 
     <div class="item_form">
-
       <%= form_with model: @item, local: true do |f| %>
         <table>
-
           <tr>
             <th>持ち物</th>
             <td><%= f.text_field :name, placeholder: "商品名", class: "form" %></td>
@@ -26,15 +24,19 @@
             <th></th>
             <td><%= f.submit "新規登録", class: "item_button" %></td>
           </tr>
-
         </table>
       <% end %>
       </div>
 
       <div class="item_index">
         <table>
+          <thead>
+            <tr>
+              <th>追加した荷物</th>
+            </tr>
+          </thead>
+          
           <tbody>
-
             <% @genres.each do |genre| %>
               <tr>
                 <th class="genre_name"><%= genre.name %></th>

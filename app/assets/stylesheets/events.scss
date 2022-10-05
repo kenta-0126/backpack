@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.event_page {
+  padding: 50px ;
+  text-align: center ;
+}
+
+.event_form {
+  margin: auto ;
+}
+
 .event_title {
   display: inline;
 	font-size: 26px;
@@ -10,7 +20,7 @@
 
 .event_table {
   display: flex ;
-  text-aline: center;
+  text-align: center;
 }
 
 .genre_title {
@@ -22,17 +32,14 @@
   padding: 12px 10px ;
 }
 
-.event_page {
-  text-align: center ;
-  padding: 30px ;
-}
-
 .event_create {
   margin: 0 auto ;
 }
 
 .event_form {
-  
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .event_button {
