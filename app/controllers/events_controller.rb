@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_customer!
   def index
     @user = current_user
     @evet = Event.new

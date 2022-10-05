@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  before_action :authenticate_customer!
   def new
     @user = current_user
     @genre = Genre.new

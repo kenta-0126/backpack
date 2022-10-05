@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_customer!
   def show
     @today = DateTime.now.to_time
     @user = current_user
