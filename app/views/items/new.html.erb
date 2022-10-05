@@ -1,52 +1,53 @@
-<div class="">
-  
-  <div class="">
+<div class="item_page">
+
+  <div class="page_title">
     <h1>アイテム追加ページ</h1>
   </div>
-  
-  
-  <div class="">
-    <div class="">
-      
+
+
+  <div class="item_page_box">
+
+    <div class="item_form">
+
       <%= form_with model: @item, local: true do |f| %>
         <table>
-          
+
           <tr>
             <th>持ち物</th>
-            <td><%= f.text_field :name, placeholder: "商品名" %></td>
+            <td><%= f.text_field :name, placeholder: "商品名", class: "form" %></td>
           </tr>
-          
+
           <tr>
             <th>入れるかばん</th>
-            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--", class: "form" %></td>
           </tr>
-          
+
           <tr>
             <th></th>
-            <td><%= f.submit "新規登録" %></td>
+            <td><%= f.submit "新規登録", class: "item_button" %></td>
           </tr>
-          
+
         </table>
       <% end %>
       </div>
-      
-      <div>
+
+      <div class="item_index">
         <table>
           <tbody>
-            
+
             <% @genres.each do |genre| %>
               <tr>
-                <th><%= genre.name %></th>
-                
+                <th class="genre_name"><%= genre.name %></th>
+
                 <div>
                   <% genre.items.each do |item| %>
-                  <td><%= item.name %></td>
+                  <td class="genre_item"><%= item.name %></td>
                   <% end %>
                 </div>
-                
+
               </tr>
             <% end %>
-            
+
           </tbody>
         </table>
       </div>
