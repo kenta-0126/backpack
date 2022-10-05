@@ -1,13 +1,13 @@
 
 <div class="item_box">
 　<h3  class="item_title">アイテム一覧</h3>
-    <div>
+    <div class="update_box">
 
        <% items.each do |item| %>
        <% if items.any? %>
-        <li><%= link_to item.name, item_path(item), :method => :put, params: {event_id: @event.id}, class: "item_update" %></li>
+        <li class="item_update"><%= link_to item.name, item_path(item), :method => :put, params: {event_id: @event.id} %></li>
        <% else %>
-       <li><%= item.name %></li>
+       <li><%= item.name class: "item_update" %></li>
        <% end %>
       <% end %>
     </div>
