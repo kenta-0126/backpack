@@ -61,15 +61,21 @@
 }
 
 .form-item {
-  padding-left: 55px ;
-  padding-right: 55px ;
+  margin: 0 auto;
+  padding: 15px ;
   position: relative ;
 }
 
 .form {
-  width: 50% ;
-  margin-bottom: 20px ;
-  padding: 10px 18px ;
+  height: 2.4em;
+  width: 350px ;
+  margin: 10px ;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 1px #ccc inset;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .sign_in  {
