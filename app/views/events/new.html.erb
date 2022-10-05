@@ -1,7 +1,7 @@
 <div class="event_page">
   
-  <div class="event_box">
-    <div class="event_title">
+  <div class="event_create">
+    <div class="page_title">
       <h1>イベント追加ページ</h1>
     </div>
     
@@ -11,23 +11,23 @@
         
         <tr>
           <th>イベント追加</th>
-          <td><%= f.text_field :title %></td>
+          <td><%= f.text_field :title, class: "form"%></td>
         </tr>
         
         <tr>
           <th>予定日</th>
-          <td><%= f.datetime_select :start_time %></td>
+          <td><%= f.datetime_select :start_time, class: "form" %></td>
         </tr>
         
         <tr>
           <th></th>
-          <td><%= f.submit "新規登録" %></td>
+          <td><%= f.submit "新規登録", class: "event_button" %></td>
         </tr>
         
       </table>
       <% end %>
     </div>
-  
   </div>
+ 
 
 </div>
